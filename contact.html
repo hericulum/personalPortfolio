@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="index.html" class="nav-logo">Kushagra Verma</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact Section Header -->
+        <div class="contact-header">
+            <h2>Establish Remote Socket Connection</h2>
+            <p>Send a network packet directly to Kushagra Verma's inbox or connect via active sockets.</p>
+        </div>
+
+        <!-- Socket Grid Layout -->
+        <div class="socket-layout">
+            
+            <!-- Left Form Side -->
+            <form class="socket-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-group">
+                    <label>USER_NAME:</label>
+                    <input type="text" name="name" placeholder="e.g. Linus Torvalds" required>
+                </div>
+
+                <div class="form-group">
+                    <label>USER_EMAIL:</label>
+                    <input type="email" name="email" placeholder="linus@kernel.org" required>
+                </div>
+
+                <div class="form-group">
+                    <label>PAYLOAD:</label>
+                    <textarea name="message" placeholder="Type your message here ..." required></textarea>
+                </div>
+
+                <button type="submit" class="socket-btn">⚡ SEND PACKET [POST]</button>
+            </form>
+
+            <!-- Right Active Channels Sidebar -->
+            <aside class="active-channels">
+                <h3># ACTIVE SOCKET CHANNELS</h3>
+                
+                <a href="mailto:hericulum@gmail.com" class="channel-item">
+                    <span class="channel-icon-email">✉</span> hericulum@gmail.com
+                </a>
+
+                <a href="https://github.com/hericulum" target="_blank" class="channel-item">
+                    <span class="channel-icon-gh">🐙</span> https://github.com/hericulum
+                </a>
+
+                <a href="https://codeforces.com/profile/argahsuk.v" target="_blank" class="channel-item">
+                    <span class="channel-icon-cp">&lt;/&gt;</span> https://codeforces.com/argahsuk.v
+                </a>
+
+                <a href="https://www.linkedin.com/in/kushagra-verma-870412422/" target="_blank" class="channel-item">
+                    <span class="channel-icon-in">in</span> https://www.linkedin.com/in/kushagra-verma-870412422/
+                </a>
+            </aside>
+
+        </div>
+    </div>
+
+</body>
+</html>

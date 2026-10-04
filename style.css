@@ -1,0 +1,433 @@
+/* CSS Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0f1115;
+    --card-bg: #161920;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent-green: #22c55e;
+    --accent-blue: #38bdf8;
+    --accent-yellow: #facc15;
+    --accent-red: #f87171;
+    --border: #222632;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Layout Container with Keyframe Animation */
+.container {
+    max-width: 1050px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-green);
+}
+
+/* Home Layout: Two Columns using CSS Grid */
+.home-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: stretch; /* Stretches both columns to match heights */
+}
+
+@media (max-width: 768px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Profile Sidebar Card (Extended Vertically with Centered Elements) */
+.profile-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between; /* Distributes inner content evenly across the full height */
+    height: 100%;
+}
+
+.profile-card > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.avatar-wrapper {
+    width: 110px;
+    height: 110px;
+    border: 2px dashed var(--accent-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(34, 197, 94, 0.05);
+    overflow: hidden; 
+    padding: 4px;
+    margin-bottom: 16px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-card h2 {
+    font-size: 1.2rem;
+    color: var(--accent-green);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.profile-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+/* Colored Social Links */
+.link-github { color: var(--text-main); }
+.link-cp { color: var(--accent-yellow); }
+.link-linkedin { color: var(--accent-blue); }
+
+/* Right Content Column */
+.content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bio-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.bio-box p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+
+.bio-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Info Cards Grid */
+.info-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.info-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-card h3 {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.text-green { color: var(--accent-green); }
+.text-blue { color: var(--accent-blue); }
+.text-yellow { color: var(--accent-yellow); }
+.text-red { color: var(--accent-red); }
+
+/* Standard Headings & Projects Page */
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--accent-green);
+    transform: translateY(-3px);
+}
+
+.project-card h3 {
+    font-size: 1.15rem;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--accent-green);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.project-links {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.project-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-links a:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
+
+/* --- SOCKET CONTACT PAGE STYLING --- */
+.contact-header h2 {
+    font-size: 1.4rem;
+    color: var(--accent-green);
+    font-weight: 600;
+    font-family: monospace;
+    margin-bottom: 6px;
+}
+
+.contact-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.socket-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 850px) {
+    .socket-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.socket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    font-family: monospace;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-green);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.socket-btn {
+    background-color: var(--accent-green);
+    color: #0f1115;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: monospace;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    text-align: center;
+}
+
+.socket-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.active-channels {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.active-channels h3 {
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    font-family: monospace;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.channel-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s ease;
+}
+
+.channel-item:hover {
+    color: var(--text-main);
+}
+
+.channel-icon-email { color: var(--accent-red); }
+.channel-icon-gh { color: var(--text-main); }
+.channel-icon-cp { color: var(--accent-yellow); }
+.channel-icon-in { color: var(--accent-blue); }
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
